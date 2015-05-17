@@ -1,0 +1,174 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BYTE	include/ida_defs.h	/^typedef int8 BYTE;$/;"	t
+BYTE1	include/ida_defs.h	81;"	d
+BYTE10	include/ida_defs.h	90;"	d
+BYTE11	include/ida_defs.h	91;"	d
+BYTE12	include/ida_defs.h	92;"	d
+BYTE13	include/ida_defs.h	93;"	d
+BYTE14	include/ida_defs.h	94;"	d
+BYTE15	include/ida_defs.h	95;"	d
+BYTE2	include/ida_defs.h	82;"	d
+BYTE3	include/ida_defs.h	83;"	d
+BYTE4	include/ida_defs.h	84;"	d
+BYTE5	include/ida_defs.h	85;"	d
+BYTE6	include/ida_defs.h	86;"	d
+BYTE7	include/ida_defs.h	87;"	d
+BYTE8	include/ida_defs.h	88;"	d
+BYTE9	include/ida_defs.h	89;"	d
+BYTEn	include/ida_defs.h	79;"	d
+CFLAGS	Makefile	/^CFLAGS = -I$(IDIR)$/;"	m
+DWORD	include/ida_defs.h	/^typedef int32 DWORD;$/;"	t
+FMT_64	include/ida_defs.h	19;"	d
+FMT_64	include/ida_defs.h	24;"	d
+FMT_64	include/ida_defs.h	29;"	d
+HIBYTE	include/ida_defs.h	76;"	d
+HIDWORD	include/ida_defs.h	78;"	d
+HIWORD	include/ida_defs.h	77;"	d
+IDIR	Makefile	/^IDIR = .\/include$/;"	m
+LOBYTE	include/ida_defs.h	73;"	d
+LODWORD	include/ida_defs.h	75;"	d
+LONG	include/ida_defs.h	/^typedef int32 LONG;$/;"	t
+LOWORD	include/ida_defs.h	74;"	d
+MAKELL	include/ida_defs.h	18;"	d
+MAKELL	include/ida_defs.h	23;"	d
+MAKELL	include/ida_defs.h	28;"	d
+OBJ	Makefile	/^OBJ = utils.o test.o$/;"	m
+QWORD	include/ida_defs.h	/^typedef int64 QWORD;$/;"	t
+SBYTE1	include/ida_defs.h	113;"	d
+SBYTE10	include/ida_defs.h	122;"	d
+SBYTE11	include/ida_defs.h	123;"	d
+SBYTE12	include/ida_defs.h	124;"	d
+SBYTE13	include/ida_defs.h	125;"	d
+SBYTE14	include/ida_defs.h	126;"	d
+SBYTE15	include/ida_defs.h	127;"	d
+SBYTE2	include/ida_defs.h	114;"	d
+SBYTE3	include/ida_defs.h	115;"	d
+SBYTE4	include/ida_defs.h	116;"	d
+SBYTE5	include/ida_defs.h	117;"	d
+SBYTE6	include/ida_defs.h	118;"	d
+SBYTE7	include/ida_defs.h	119;"	d
+SBYTE8	include/ida_defs.h	120;"	d
+SBYTE9	include/ida_defs.h	121;"	d
+SBYTEn	include/ida_defs.h	111;"	d
+SHIBYTE	include/ida_defs.h	108;"	d
+SHIDWORD	include/ida_defs.h	110;"	d
+SHIWORD	include/ida_defs.h	109;"	d
+SLOBYTE	include/ida_defs.h	105;"	d
+SLODWORD	include/ida_defs.h	107;"	d
+SLOWORD	include/ida_defs.h	106;"	d
+SWORD1	include/ida_defs.h	128;"	d
+SWORD2	include/ida_defs.h	129;"	d
+SWORD3	include/ida_defs.h	130;"	d
+SWORD4	include/ida_defs.h	131;"	d
+SWORD5	include/ida_defs.h	132;"	d
+SWORD6	include/ida_defs.h	133;"	d
+SWORD7	include/ida_defs.h	134;"	d
+SWORDn	include/ida_defs.h	112;"	d
+WORD	include/ida_defs.h	/^typedef int16 WORD;$/;"	t
+WORD1	include/ida_defs.h	96;"	d
+WORD2	include/ida_defs.h	97;"	d
+WORD3	include/ida_defs.h	98;"	d
+WORD4	include/ida_defs.h	99;"	d
+WORD5	include/ida_defs.h	100;"	d
+WORD6	include/ida_defs.h	101;"	d
+WORD7	include/ida_defs.h	102;"	d
+WORDn	include/ida_defs.h	80;"	d
+_BYTE	include/ida_defs.h	52;"	d
+_DWORD	include/ida_defs.h	54;"	d
+_LONGLONG	include/ida_defs.h	57;"	d
+_QWORD	include/ida_defs.h	55;"	d
+_UNKNOWN	include/ida_defs.h	295;"	d
+_WORD	include/ida_defs.h	53;"	d
+__CFADD__	include/ida_defs.h	/^template<class T, class U> int8 __CFADD__(T x, U y)$/;"	f
+__CFADD__	include/ida_defs.h	277;"	d
+__CFSHL__	include/ida_defs.h	275;"	d
+__CFSHR__	include/ida_defs.h	276;"	d
+__CFSUB__	include/ida_defs.h	/^template<class T, class U> int8 __CFSUB__(T x, U y)$/;"	f
+__CFSUB__	include/ida_defs.h	278;"	d
+__MKCRCL__	include/ida_defs.h	286;"	d
+__MKCRCR__	include/ida_defs.h	287;"	d
+__MKCSHL__	include/ida_defs.h	/^template<class T> int8 __MKCSHL__(T value, uint count)$/;"	f
+__MKCSHR__	include/ida_defs.h	/^template<class T> int8 __MKCSHR__(T value, uint count)$/;"	f
+__OFADD__	include/ida_defs.h	/^template<class T, class U> int8 __OFADD__(T x, U y)$/;"	f
+__OFADD__	include/ida_defs.h	279;"	d
+__OFSUB__	include/ida_defs.h	/^template<class T, class U> int8 __OFSUB__(T x, U y)$/;"	f
+__OFSUB__	include/ida_defs.h	280;"	d
+__PAIR__	include/ida_defs.h	/^template<class T>  int16 __PAIR__( int8  high, T low) { return ((( int16)high) << sizeof(high)*8) | uint8(low); }$/;"	f
+__PAIR__	include/ida_defs.h	/^template<class T>  int32 __PAIR__( int16 high, T low) { return ((( int32)high) << sizeof(high)*8) | uint16(low); }$/;"	f
+__PAIR__	include/ida_defs.h	/^template<class T>  int64 __PAIR__( int32 high, T low) { return ((( int64)high) << sizeof(high)*8) | uint32(low); }$/;"	f
+__PAIR__	include/ida_defs.h	/^template<class T> uint16 __PAIR__(uint8  high, T low) { return (((uint16)high) << sizeof(high)*8) | uint8(low); }$/;"	f
+__PAIR__	include/ida_defs.h	/^template<class T> uint32 __PAIR__(uint16 high, T low) { return (((uint32)high) << sizeof(high)*8) | uint16(low); }$/;"	f
+__PAIR__	include/ida_defs.h	/^template<class T> uint64 __PAIR__(uint32 high, T low) { return (((uint64)high) << sizeof(high)*8) | uint32(low); }$/;"	f
+__PAIR__	include/ida_defs.h	271;"	d
+__RCL__	include/ida_defs.h	284;"	d
+__RCR__	include/ida_defs.h	285;"	d
+__ROL__	include/ida_defs.h	/^template<class T> T __ROL__(T value, uint count)$/;"	f
+__ROL__	include/ida_defs.h	273;"	d
+__ROR__	include/ida_defs.h	/^template<class T> T __ROR__(T value, uint count)$/;"	f
+__ROR__	include/ida_defs.h	274;"	d
+__SETP__	include/ida_defs.h	288;"	d
+__SETS__	include/ida_defs.h	/^template<class T> int8 __SETS__(T x)$/;"	f
+__int16	include/ida_defs.h	16;"	d
+__int32	include/ida_defs.h	15;"	d
+__int64	include/ida_defs.h	14;"	d
+__int8	include/ida_defs.h	17;"	d
+bool	include/ida_defs.h	/^typedef int bool;       \/\/ we want to use bool in our C programs$/;"	t
+int16	include/ida_defs.h	/^typedef          short  int16;$/;"	t
+int32	include/ida_defs.h	/^typedef          int    int32;$/;"	t
+int64	include/ida_defs.h	/^typedef ll              int64;$/;"	t
+int8	include/ida_defs.h	/^typedef          char   int8;$/;"	t
+ll	include/ida_defs.h	/^  typedef          __int64 ll;$/;"	t
+ll	include/ida_defs.h	/^  typedef          long long ll;$/;"	t
+main	test.c	/^int main() {$/;"	f
+memset32	include/ida_defs.h	/^inline void memset32(void *ptr, uint32 value, int count)$/;"	f
+printf_buffer	utils.c	/^void printf_buffer(char * buffer, int size) {$/;"	f
+set_buffer	test.c	/^void set_buffer(char * buffer) {$/;"	f
+set_buffer_2	test.c	/^void set_buffer_2(char *buffer) {$/;"	f
+set_buffer_3	test.c	/^void set_buffer_3(char *buffer1, char *buffer2) {$/;"	f
+sint16	include/ida_defs.h	/^typedef   signed short  sint16;$/;"	t
+sint32	include/ida_defs.h	/^typedef   signed int    sint32;$/;"	t
+sint64	include/ida_defs.h	/^typedef ll              sint64;$/;"	t
+sint8	include/ida_defs.h	/^typedef   signed char   sint8;$/;"	t
+snprintf	include/ida_defs.h	298;"	d
+sub_402580	utils.c	/^int sub_402580(int a1, int a2) {$/;"	f
+sub_402FD0	utils.c	/^int sub_402FD0(void * a1, unsigned int a2, void * a3, int a4)$/;"	f
+sub_403040	utils.c	/^int sub_403040(void *a1, int a2, void *a3, int a4) {$/;"	f
+sub_4030B0	utils.c	/^int sub_4030B0(void* a1, void* a2, void *a3, int a4) {$/;"	f
+sub_403110	utils.c	/^int* sub_403110(void *a1, void *a2, void *a3, int a4) {$/;"	f
+sub_4031D0	utils.c	/^unsigned sub_4031D0(void *a1, void *a2, unsigned int a3, int a4) {$/;"	f
+sub_403240	utils.c	/^int sub_403240(void *a1, void *a2, unsigned int a3, int a4) {$/;"	f
+sub_4032B0	utils.c	/^int sub_4032B0(void *a1, void *a2, void *a3, int a4, void *a5, int a6) {$/;"	f
+sub_403440	utils.c	/^int sub_403440(void *a1, void *a2, int a3, void *a4, int a5) {$/;"	f
+sub_403480	utils.c	/^int sub_403480(void *a1, void *a2, void *a3, void *a4, int a5) {$/;"	f
+sub_4034D0	utils.c	/^int * sub_4034D0(void *a1, void *a2, void *a3, int a4, void *a5, int a6) {$/;"	f
+sub_403640	utils.c	/^signed int sub_403640(void * a1, void * a2, int a3)$/;"	f
+sub_403680	utils.c	/^int sub_403680(void * a1, int a2)$/;"	f
+sub_4036A0	utils.c	/^int sub_4036A0(void *a1, void *a2, int a3, void *a4, int a5) {$/;"	f
+sub_403730	utils.c	/^int sub_403730(void * a1, void *a2, int a3, void *a4, int a5) {$/;"	f
+sub_4037D0	utils.c	/^int sub_4037D0(unsigned int a1) {$/;"	f
+sub_4037F0	utils.c	/^int sub_4037F0(void *a1, void *a2, void *a3, int a4, void *a5) {$/;"	f
+sub_4038F0	utils.c	/^void * sub_4038F0(void *result, void *a2, void *a3, int a4) {$/;"	f
+sub_403910	utils.c	/^int sub_403910(void *a1, int a2) {$/;"	f
+sub_403930	utils.c	/^unsigned int sub_403930(void *a1, int a2, int a3) {$/;"	f
+sub_4039B0	utils.c	/^int* sub_4039B0(void *a1, void *a2, int a3){$/;"	f
+test_sub_402FD0	test.c	/^int test_sub_402FD0() {$/;"	f
+test_sub_403640	test.c	/^int test_sub_403640() {$/;"	f
+test_sub_403680	test.c	/^int test_sub_403680() {$/;"	f
+test_sub_4037F0	test.c	/^int test_sub_4037F0() {$/;"	f
+test_sub_403930	test.c	/^int test_sub_403930() {$/;"	f
+uchar	include/ida_defs.h	/^typedef unsigned char uchar;$/;"	t
+uint	include/ida_defs.h	/^typedef unsigned int uint;$/;"	t
+uint16	include/ida_defs.h	/^typedef unsigned short  uint16;$/;"	t
+uint32	include/ida_defs.h	/^typedef unsigned int    uint32;$/;"	t
+uint64	include/ida_defs.h	/^typedef ull             uint64;$/;"	t
+uint8	include/ida_defs.h	/^typedef unsigned char   uint8;$/;"	t
+ull	include/ida_defs.h	/^  typedef unsigned __int64 ull;$/;"	t
+ull	include/ida_defs.h	/^  typedef unsigned long long ull;$/;"	t
+ulong	include/ida_defs.h	/^typedef unsigned long ulong;$/;"	t
+ushort	include/ida_defs.h	/^typedef unsigned short ushort;$/;"	t
+vsnprintf	include/ida_defs.h	299;"	d

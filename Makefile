@@ -1,12 +1,13 @@
 IDIR = ./include
 CFLAGS = -I$(IDIR)
-OBJ = utils.o test.o
+CLIBS = -lusb-1.0
+OBJ = utils.o test.o libusb_api.o demo.o
 
-test: $(OBJ)
-	gcc -o $@ $^ 
+demo: $(OBJ)
+	gcc -o $@ $^ $(CLIBS) 
 
 %.o: %.c 
 	gcc -c -o $@ $< $(CFLAGS) 
 
 clean:
-	-rm test *.o
+	-rm demo *.o

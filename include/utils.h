@@ -1,3 +1,6 @@
+#ifndef _UTILS_H
+#define _UTILS_H
+
 #include <stdint.h>
 #include <stdio.h>
 #include <string.h>
@@ -6,6 +9,41 @@
 //typedef int32_t _DWORD;
 //typedef int16_t __int16;
 //typedef uint8_t _BYTE;
+
+extern char byte_4110C8[];
+extern char byte_4110D8[];
+extern char byte_411110[];
+
+extern char *byte_411140; //char *byte_411140 = &byte_411110[48];
+extern char *byte_411180; //char *byte_411180 = &byte_411110[112];
+extern char *byte_4111C0; //char *byte_4111C0 = &byte_411110[176];
+extern char *byte_4111F0; //char *byte_4111F0 = &byte_411110[224];
+extern char *byte_411210; //char *byte_411210 = &byte_411110[256];
+
+extern char byte_411410[];
+
+//char byte_417888[8];
+extern char byte_417888[];
+
+//char byte_417888[8];
+extern char byte_417E80[];
+
+//char byte_417F98[32];
+extern char byte_417F98[];
+
+//char byte_417FB8[48];
+extern char byte_417FB8[];
+
+//char byte_417FE8[888];
+extern char byte_417FE8[];
+extern char *byte_4182E8; //char *byte_4182E8 = &byte_417FE8[768];
+extern char *byte_418320; //char *byte_418320 = &byte_417FE8[768 + 56];
+
+//char byte_41836C[128];
+extern char byte_41836C[];
+extern char *byte_41838C; // char *byte_41838C = &byte_41836C[32];
+extern char *byte_4183AC; // char *byte_41838C = &byte_41836C[64];
+extern char *byte_4183CC; // char *byte_41838C = &byte_41836C[96];
 
 void printf_buffer(char *buffer, int size);
 
@@ -63,3 +101,22 @@ int sub_4030B0(void* a1, void * a2, void *a3, int a4);
 int sub_403240(void *a1, void *a2, unsigned int a3, int a4);
 
 int sub_403040(void *, int a2, void *a3, int a4); //@1
+
+/* a3 is a 8 byte string */
+/* a1 is pbSendBuffer */
+/* a4 is magic number, 0x8 */
+void sub_401E70(void *a1, void *a2, void *a3, int a4 );
+
+char sub_403CC0(void *a1, void *a2, void *a3, int a4);
+
+signed int sub_403C90(void *a1);
+
+signed int sub_403AF0(void *a1, signed int a2 );
+
+signed int sub_403B40();
+
+unsigned char sub_403B20(void *a1, signed int a2);
+
+void sub_401E40(void *a1, void *a2, int a3);
+
+#endif

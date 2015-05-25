@@ -284,13 +284,47 @@ int test_sub_4037F0() {
 }
 
 
-int main() {
-    //test_sub_403680();
-    //test_sub_402FD0();
-    //test_sub_403640();
-    //test_sub_403930();
-    test_sub_4037F0();
-    return 0;
+int test_sub_403AF0() {
+    int a1 = 0x9a4ba4e4;
+    int i;
+    for (i = 0; i < 0x8; i++ ) {
+        printf("result is 0x%x\n", sub_403AF0(&a1, i));
+    }
 }
+
+int test_sub_403C90() {
+    int a1[] = {0x29f41720, 0x05dbcfb7};
+    int res;
+    res = sub_403C90(a1);
+    printf("result is 0x%x\n", res);
+    printf("byte_417FE8 is:\n");
+    printf_buffer(byte_417FE8, 768);
+    printf("byte_4182E8 is:\n");
+    printf_buffer(byte_4182E8, 56);
+    printf("byte_418320 is:\n");
+    printf_buffer(byte_418320, 64);
+}
+
+int test_sub_403CC0() {
+   char pbSendBuffer[0x41C] = {
+       0x00, 0x12, 0x02, 0x00
+    };
+    int a3[] = {0x29f41720, 0x05dbcfb7};
+    int res = sub_403CC0(pbSendBuffer, pbSendBuffer, a3, 0x01);
+    printf("pbSendBuffer is:\n");
+    printf_buffer(pbSendBuffer, sizeof(pbSendBuffer));
+}
+
+int test_sub_401E70() {
+   char pbSendBuffer[0x41C] = {
+       0x00, 0x12, 0x02, 0x00
+    };
+    int a3[] = {0x29f41720, 0x05dbcfb7};
+    sub_401E70(pbSendBuffer, pbSendBuffer, a3, 0x08);
+    printf("pbSendBuffer is:\n");
+    printf_buffer(pbSendBuffer, sizeof(pbSendBuffer));
+   
+}
+
 
 

@@ -22,7 +22,10 @@ BYTE8	include/ida_defs.h	88;"	d
 BYTE9	include/ida_defs.h	89;"	d
 BYTEn	include/ida_defs.h	79;"	d
 CFLAGS	Makefile	/^CFLAGS = -I$(IDIR)$/;"	m
+CLIBS	Makefile	/^CLIBS = -lusb-1.0$/;"	m
 DWORD	include/ida_defs.h	/^typedef int32 DWORD;$/;"	t
+Dongle_LEDControl	demo.c	/^int Dongle_LEDControl() {$/;"	f
+Dongle_Open	demo.c	/^int Dongle_Open() {$/;"	f
 FMT_64	include/ida_defs.h	19;"	d
 FMT_64	include/ida_defs.h	24;"	d
 FMT_64	include/ida_defs.h	29;"	d
@@ -37,7 +40,7 @@ LOWORD	include/ida_defs.h	74;"	d
 MAKELL	include/ida_defs.h	18;"	d
 MAKELL	include/ida_defs.h	23;"	d
 MAKELL	include/ida_defs.h	28;"	d
-OBJ	Makefile	/^OBJ = utils.o test.o$/;"	m
+OBJ	Makefile	/^OBJ = utils.o test.o libusb_api.o demo.o$/;"	m
 QWORD	include/ida_defs.h	/^typedef int64 QWORD;$/;"	t
 SBYTE1	include/ida_defs.h	113;"	d
 SBYTE10	include/ida_defs.h	122;"	d
@@ -83,6 +86,7 @@ _DWORD	include/ida_defs.h	54;"	d
 _LONGLONG	include/ida_defs.h	57;"	d
 _QWORD	include/ida_defs.h	55;"	d
 _UNKNOWN	include/ida_defs.h	295;"	d
+_UTILS_H	include/utils.h	2;"	d
 _WORD	include/ida_defs.h	53;"	d
 __CFADD__	include/ida_defs.h	/^template<class T, class U> int8 __CFADD__(T x, U y)$/;"	f
 __CFADD__	include/ida_defs.h	277;"	d
@@ -118,57 +122,99 @@ __int32	include/ida_defs.h	15;"	d
 __int64	include/ida_defs.h	14;"	d
 __int8	include/ida_defs.h	17;"	d
 bool	include/ida_defs.h	/^typedef int bool;       \/\/ we want to use bool in our C programs$/;"	t
+byte_4110C8	utils.c	/^char byte_4110C8[] = {$/;"	v
+byte_4110D8	utils.c	/^char byte_4110D8[] = {$/;"	v
+byte_411110	utils.c	/^char byte_411110[] = {$/;"	v
+byte_411140	utils.c	/^char *byte_411140 = &byte_411110[48];$/;"	v
+byte_411180	utils.c	/^char *byte_411180 = &byte_411110[112];$/;"	v
+byte_4111C0	utils.c	/^char *byte_4111C0 = &byte_411110[176];$/;"	v
+byte_4111F0	utils.c	/^char *byte_4111F0 = &byte_411110[224];$/;"	v
+byte_411210	utils.c	/^char *byte_411210 = &byte_411110[256];$/;"	v
+byte_411410	utils.c	/^char byte_411410[] = {$/;"	v
+byte_417888	utils.c	/^char byte_417888[8];$/;"	v
+byte_417E80	utils.c	/^char byte_417E80[] = {$/;"	v
+byte_417F98	utils.c	/^char byte_417F98[32];$/;"	v
+byte_417FB8	utils.c	/^char byte_417FB8[48];$/;"	v
+byte_417FE8	utils.c	/^char byte_417FE8[888];$/;"	v
+byte_4182E8	utils.c	/^char *byte_4182E8 = &byte_417FE8[768];$/;"	v
+byte_418320	utils.c	/^char *byte_418320 = &byte_417FE8[768 + 56];$/;"	v
+byte_41836C	utils.c	/^char byte_41836C[128];$/;"	v
+byte_41838C	utils.c	/^char *byte_41838C = &byte_41836C[32];$/;"	v
+byte_4183AC	utils.c	/^char *byte_4183AC = &byte_41836C[64];$/;"	v
+byte_4183CC	utils.c	/^char *byte_4183CC = &byte_41836C[96];$/;"	v
+close_ukey_context	libusb_api.c	/^int close_ukey_context() {$/;"	f
+ctx	libusb_api.c	/^libusb_context *ctx = NULL;$/;"	v
+global_string0	test.c	/^char global_string0[] = {$/;"	v
+global_string1	test.c	/^char global_string1[] = {$/;"	v
+global_string2	test.c	/^char global_string2[] = {$/;"	v
 int16	include/ida_defs.h	/^typedef          short  int16;$/;"	t
 int32	include/ida_defs.h	/^typedef          int    int32;$/;"	t
 int64	include/ida_defs.h	/^typedef ll              int64;$/;"	t
 int8	include/ida_defs.h	/^typedef          char   int8;$/;"	t
 ll	include/ida_defs.h	/^  typedef          __int64 ll;$/;"	t
 ll	include/ida_defs.h	/^  typedef          long long ll;$/;"	t
-main	test.c	/^int main() {$/;"	f
+main	demo.c	/^int main() {$/;"	f
 memset32	include/ida_defs.h	/^inline void memset32(void *ptr, uint32 value, int count)$/;"	f
 printf_buffer	utils.c	/^void printf_buffer(char * buffer, int size) {$/;"	f
+read_from_key	libusb_api.c	/^int read_from_key(char *buffer, int size) {$/;"	f
 set_buffer	test.c	/^void set_buffer(char * buffer) {$/;"	f
 set_buffer_2	test.c	/^void set_buffer_2(char *buffer) {$/;"	f
 set_buffer_3	test.c	/^void set_buffer_3(char *buffer1, char *buffer2) {$/;"	f
+setup_buffer	test.c	/^void setup_buffer(void *buffer) {$/;"	f
+setup_ukey_context	libusb_api.c	/^int setup_ukey_context() {$/;"	f
 sint16	include/ida_defs.h	/^typedef   signed short  sint16;$/;"	t
 sint32	include/ida_defs.h	/^typedef   signed int    sint32;$/;"	t
 sint64	include/ida_defs.h	/^typedef ll              sint64;$/;"	t
 sint8	include/ida_defs.h	/^typedef   signed char   sint8;$/;"	t
 snprintf	include/ida_defs.h	298;"	d
+sub_401E40	utils.c	/^void sub_401E40(void *a1, void *a2, int a3) {$/;"	f
+sub_401E70	utils.c	/^void sub_401E70(void *a1, void *a2, void *a3, int a4) {$/;"	f
 sub_402580	utils.c	/^int sub_402580(int a1, int a2) {$/;"	f
 sub_402FD0	utils.c	/^int sub_402FD0(void * a1, unsigned int a2, void * a3, int a4)$/;"	f
 sub_403040	utils.c	/^int sub_403040(void *a1, int a2, void *a3, int a4) {$/;"	f
 sub_4030B0	utils.c	/^int sub_4030B0(void* a1, void* a2, void *a3, int a4) {$/;"	f
-sub_403110	utils.c	/^int* sub_403110(void *a1, void *a2, void *a3, int a4) {$/;"	f
+sub_403110	utils.c	/^void sub_403110(void *a1, void *a2, void *a3, int a4) {$/;"	f
 sub_4031D0	utils.c	/^unsigned sub_4031D0(void *a1, void *a2, unsigned int a3, int a4) {$/;"	f
 sub_403240	utils.c	/^int sub_403240(void *a1, void *a2, unsigned int a3, int a4) {$/;"	f
 sub_4032B0	utils.c	/^int sub_4032B0(void *a1, void *a2, void *a3, int a4, void *a5, int a6) {$/;"	f
 sub_403440	utils.c	/^int sub_403440(void *a1, void *a2, int a3, void *a4, int a5) {$/;"	f
 sub_403480	utils.c	/^int sub_403480(void *a1, void *a2, void *a3, void *a4, int a5) {$/;"	f
-sub_4034D0	utils.c	/^int * sub_4034D0(void *a1, void *a2, void *a3, int a4, void *a5, int a6) {$/;"	f
+sub_4034D0	utils.c	/^void  sub_4034D0(void *a1, void *a2, void *a3, int a4, void *a5, int a6) {$/;"	f
 sub_403640	utils.c	/^signed int sub_403640(void * a1, void * a2, int a3)$/;"	f
 sub_403680	utils.c	/^int sub_403680(void * a1, int a2)$/;"	f
 sub_4036A0	utils.c	/^int sub_4036A0(void *a1, void *a2, int a3, void *a4, int a5) {$/;"	f
 sub_403730	utils.c	/^int sub_403730(void * a1, void *a2, int a3, void *a4, int a5) {$/;"	f
 sub_4037D0	utils.c	/^int sub_4037D0(unsigned int a1) {$/;"	f
 sub_4037F0	utils.c	/^int sub_4037F0(void *a1, void *a2, void *a3, int a4, void *a5) {$/;"	f
-sub_4038F0	utils.c	/^void * sub_4038F0(void *result, void *a2, void *a3, int a4) {$/;"	f
+sub_4038F0	utils.c	/^void sub_4038F0(void *result, void *a2, void *a3, int a4) {$/;"	f
 sub_403910	utils.c	/^int sub_403910(void *a1, int a2) {$/;"	f
-sub_403930	utils.c	/^unsigned int sub_403930(void *a1, int a2, int a3) {$/;"	f
-sub_4039B0	utils.c	/^int* sub_4039B0(void *a1, void *a2, int a3){$/;"	f
+sub_403930	utils.c	/^unsigned int sub_403930(void *a1, int a2, unsigned int a3) {$/;"	f
+sub_4039B0	utils.c	/^void sub_4039B0(void *a1, void *a2, unsigned int a3){$/;"	f
+sub_403AF0	utils.c	/^signed int sub_403AF0(void *a1, signed int a2) {$/;"	f
+sub_403B20	utils.c	/^unsigned char sub_403B20(void *a1, signed int a2) {$/;"	f
+sub_403B40	utils.c	/^signed int sub_403B40() {$/;"	f
+sub_403C90	utils.c	/^signed int sub_403C90(void *a1)  {$/;"	f
+sub_403CC0	utils.c	/^char sub_403CC0(void *a1, void *a2, void *a3, int a4) {$/;"	f
+test	libusb_api.c	/^int test() {$/;"	f
+test_sub_401E70	test.c	/^int test_sub_401E70() {$/;"	f
 test_sub_402FD0	test.c	/^int test_sub_402FD0() {$/;"	f
 test_sub_403640	test.c	/^int test_sub_403640() {$/;"	f
 test_sub_403680	test.c	/^int test_sub_403680() {$/;"	f
 test_sub_4037F0	test.c	/^int test_sub_4037F0() {$/;"	f
 test_sub_403930	test.c	/^int test_sub_403930() {$/;"	f
+test_sub_403AF0	test.c	/^int test_sub_403AF0() {$/;"	f
+test_sub_403C90	test.c	/^int test_sub_403C90() {$/;"	f
+test_sub_403CC0	test.c	/^int test_sub_403CC0() {$/;"	f
 uchar	include/ida_defs.h	/^typedef unsigned char uchar;$/;"	t
 uint	include/ida_defs.h	/^typedef unsigned int uint;$/;"	t
 uint16	include/ida_defs.h	/^typedef unsigned short  uint16;$/;"	t
 uint32	include/ida_defs.h	/^typedef unsigned int    uint32;$/;"	t
 uint64	include/ida_defs.h	/^typedef ull             uint64;$/;"	t
 uint8	include/ida_defs.h	/^typedef unsigned char   uint8;$/;"	t
+ukey_handle	libusb_api.c	/^libusb_device_handle *ukey_handle = NULL;$/;"	v
 ull	include/ida_defs.h	/^  typedef unsigned __int64 ull;$/;"	t
 ull	include/ida_defs.h	/^  typedef unsigned long long ull;$/;"	t
 ulong	include/ida_defs.h	/^typedef unsigned long ulong;$/;"	t
 ushort	include/ida_defs.h	/^typedef unsigned short ushort;$/;"	t
 vsnprintf	include/ida_defs.h	299;"	d
+write_to_ukey	libusb_api.c	/^int write_to_ukey(char *buffer, int size) {$/;"	f

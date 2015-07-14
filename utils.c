@@ -166,12 +166,6 @@ char byte_417E80[] = {
 };
 
 
-//char byte_417FE8; // werid dude, may or may not be important.
-//char byte_417FE8[768]; // werid dude, may or may not be important.
-//
-//char byte_4182E8[56]; // filled by sub_403B40()
-//char byte_418320[64]; //filled by sub_403AF0()
-//
 char *byte_411140 = &byte_411110[48];
 char *byte_411180 = &byte_411110[112];
 char *byte_4111C0 = &byte_411110[176];
@@ -1472,6 +1466,44 @@ void sub_401E70(void *a1, void *a2, void *a3, int a4) {
     }
     while ( v6 );
   }
+
+}
+
+void  sub_401EE0(void *a1, void *a2, void *a3, int a4) {
+  int v4; // edx@1
+  void * v5; // esi@2
+  int v6; // eax@2
+  unsigned int v7; // ebp@2
+  int v8; // edi@4
+  int v9; // ebx@4
+  int v10[2]; // [sp+4h] [bp-8h]@1
+  //int v11; // [sp+8h] [bp-4h]@1
+
+  v4 = *(_DWORD *)(a3 + 4);
+  v10[0] = *(_DWORD *)a3;
+  v10[1] = v4;
+  if ( a4 > 0 )
+  {
+    v5 = a1;
+    v6 = a2 - a1;
+    v7 = (unsigned int)(a4 + 7) >> 3;
+    while ( 1 )
+    {
+      v8 = *(_DWORD *)v5;
+      v9 = *(_DWORD *)(v5 + 4);
+      sub_403CC0(v5, v5 + v6, v10, 1);
+      v10[0] = v8;
+      v10[1] = v9;
+      sub_401E40(v10, a3, 8);
+      v5 += 8;
+      --v7;
+      if ( !v7 )
+        break;
+      v6 = a2 - a1;
+    }
+  }
+
+
 
 }
 

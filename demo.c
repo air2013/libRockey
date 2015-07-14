@@ -116,21 +116,110 @@ int Dongle_LEDControl() {
     printf_buffer(receive_buffer, sizeof(receive_buffer));
 }
 
+int Dongle_RunExeFile(short fielid, char *inoutbuf, short len) {
+    char pbSendBuffer[0x41C] = {0x00, 0x4A, 0x00, 0x00};
+    memcpy(pbSendBuffer+4, &fielid, 2);
+    memcpy(pbSendBuffer+6, &len, 2);
+    memcpy(pbSendBuffer+8, inoutbuf, len);
+    
+    printf("pbSendBuffer is:\n");
+    printf_buffer(pbSendBuffer, sizeof(pbSendBuffer));
+
+    /* FAKE!!!
+     * /
+    0012FA8C   C04C4490
+        0012FA90   CF3D07FD
+
+    int fake_417888[] = {0xc04c4490, 0xcf3d07fd};
+    sub_401E70(pbSendBuffer, pbSendBuffer, fake_417888, 0x408);
+    */
+    sub_401E70(pbSendBuffer, pbSendBuffer, byte_417888, 0x408);
+    printf("pbSendBuffer is:\n");
+    printf_buffer(pbSendBuffer, sizeof(pbSendBuffer));
+
+    char send_buffer[0x41] = {0x02, 0x04, 0x08};
+    int to_send = sizeof(pbSendBuffer) - 20;
+    int remaining = to_send;
+    short max_load = 58;
+    while(remaining > 0 ) {
+        short index;
+        short bytes;
+        if (remaining < max_load) {
+            bytes = remaining;
+        }
+        else {
+            bytes = max_load;
+        }
+        index = to_send - remaining;
+        //printf("index is: 0x%x\n", index);
+        //printf("bytes is: 0x%x\n", bytes);
+        //memcpy(send_buffer+3, &index, 2);
+        //memcpy(send_buffer+5, &bytes, 2);
+        memcpy(send_buffer+4, &index, 1);
+        memcpy(send_buffer+3, (void *)&index + 1, 1);
+        memcpy(send_buffer+6, &bytes, 1);
+        memcpy(send_buffer+5, (void *)&bytes + 1, 1);
+        memcpy(send_buffer+7, pbSendBuffer+index, bytes);
+        remaining -= max_load;
+
+        printf("send_buffer is:\n");
+        printf_buffer(send_buffer, sizeof(send_buffer));
+        if (write_to_ukey(send_buffer, sizeof(send_buffer)) < 0) {
+            printf("write_to_key() failed.\n");
+            exit(1);
+        }
+    }
+    char receive_buffer[0x41];
+    int i;
+    for (i = 0; i < 18; i++) {
+        if (read_from_key(receive_buffer, sizeof(receive_buffer)) < 0) {
+            printf("read_from_key() failed.\n");
+            exit(1);
+        }
+        short index;
+        short bytes;
+        memcpy((void *)&index, receive_buffer+4, 1);
+        memcpy((void *)&index+1, receive_buffer+3, 1);
+        memcpy((void *)&bytes, receive_buffer+6, 1);
+        memcpy((void *)&bytes+1, receive_buffer+5, 1);
+
+        printf("index is: %x\n", index);
+        printf("bytes is: %x\n", bytes);
+        memcpy(pbSendBuffer+8+index, receive_buffer+7, bytes);
+        printf("receive_buffer is:\n");
+        printf_buffer(receive_buffer, sizeof(receive_buffer));
+    }
+
+    sub_401EE0(pbSendBuffer+8, pbSendBuffer+8, byte_417888, 0x400);
+    printf("pbSendBuffer is:\n");
+    printf_buffer(pbSendBuffer, sizeof(pbSendBuffer));
+
+}
+
 int main() {
     if (setup_ukey_context() != 0) {
         printf("setup_ukey_context() failed.\n");
         exit(1);
     }
     Dongle_Open();
-    Dongle_Open();
-    Dongle_LEDControl();
-
-    close_ukey_context();
+    //Dongle_LEDControl();
     
-    //test_sub_403AF0();
+    short fielid = 0x1;
+    char inoutbuf[1020] = {
+    0x22, 0x00, 0x00, 0x00, 0x00, 0xc1, 0x00, 0x00,   
+    0x00, 0x22, 0x00, 0x00, 0x00, 0x14, 0x00, 0x00,
+    0x00, 0x07, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,   
+    0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
+    0xff, 0xff, 0xff, 0xff, 0xff, 0xff
+    };
+    Dongle_RunExeFile(fielid, inoutbuf, 1020);
+    close_ukey_context();
+
+    ///test_sub_403AF0();
     //test_sub_403C90();
     //test_sub_403CC0();
     //test_sub_401E70();
     //test_sub_4037F0_();
     return 0;
 }
+

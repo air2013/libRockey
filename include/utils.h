@@ -119,4 +119,6 @@ unsigned char sub_403B20(void *a1, signed int a2);
 
 void sub_401E40(void *a1, void *a2, int a3);
 
+void _sub_401EE0(void *a1, void *a2, void *a3, int a4);
+
 #endif

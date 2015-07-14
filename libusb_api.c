@@ -46,7 +46,7 @@ int write_to_ukey(char *buffer, int size) {
         printf("Failed to claim interface 0.\n");
         return -1;
     }
-    if (libusb_interrupt_transfer(ukey_handle, 0x2, buffer, size, &transferred, 1000) < 0) {
+    if (libusb_interrupt_transfer(ukey_handle, 0x2, buffer, size, &transferred, 10000) < 0) {
         printf("libusb_interrupt_transfer() failed.\n");
         return -1;
     }
@@ -64,7 +64,7 @@ int read_from_key(char *buffer, int size) {
         printf("Failed to claim interface 0.\n");
         return -1;
     }
-    if (libusb_interrupt_transfer(ukey_handle, 0x81, buffer, size, &transferred, 1000) < 0) {
+    if (libusb_interrupt_transfer(ukey_handle, 0x81, buffer, size, &transferred, 10000) < 0) {
         printf("libusb_interrupt_transfer() failed.\n");
         return -1;
     }
